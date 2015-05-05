@@ -3,6 +3,7 @@ void yyerror (char *s);
 #include <stdio.h>     /* C declarations used in actions */
 #include <stdlib.h>
 #include "hash.h"
+#include "lex.yy.h"
 
 %}
 
@@ -25,22 +26,18 @@ void yyerror (char *s);
 %token PARENTESES_DIREITO
 %token NUM_INTEIRO
 %token NUM_REAL
-%token IDENTIFICADOR
+%token PALAVRA_RESERVADA
 %token COMENTARIO
 %token NUMERO_INT_MAL_FORMADO
 %token NUMERO_REAL_MAL_FORMADO
 %token CARACTERES_INVALIDOS
+%token VAR
 
 %%
 /* descriptions of expected inputs     corresponding actions (in C) */
-programa	: IDENTIFICADOR IDENTIFICADOR PONTO_E_VIRGULA corpo PONTO {printf ("Primeira regra\n");} ;
-corpo		: IDENTIFICADOR comandos IDENTIFICADOR {printf ("Segunda regra\n");} ; 
-comandos	: IDENTIFICADOR PARENTESES_ESQUERDO IDENTIFICADOR PARENTESES_DIREITO {printf ("Terceira regra\n");} ;
+programa	: PALAVRA_RESERVADA VAR PONTO_E_VIRGULA corpo PONTO {printf ("Primeira regra\n"); } ;
+corpo		: PALAVRA_RESERVADA comandos PALAVRA_RESERVADA {printf ("Segunda regra\n");} ; 
+comandos	: PALAVRA_RESERVADA PARENTESES_ESQUERDO VAR PARENTESES_DIREITO PONTO_E_VIRGULA {printf ("Terceira regran");} ;
 %%                     /* C code */
-int main (void)
-{
 
-	return yyparse();
-
-}
 void yyerror (char *s) {fprintf (stderr, "%s\n", s);} 
