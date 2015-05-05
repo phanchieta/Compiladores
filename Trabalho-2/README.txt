@@ -10,7 +10,7 @@ $ sudo apt-get install flex
 Compile with:
 
 $ yacc -d lalg.y
-$ flex trabalho2.l
+$ flex --header-file=lex.yy.h trabalho2.l
 $ gcc -o prog_name y.tab.c lex.yy.c hash.c
 
 Run with:
