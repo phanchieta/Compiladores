@@ -1,4 +1,5 @@
 README
+(Outdated y.tab.c and y.tab.h in repo. Recompile lalg.y before running)
 
 Install bison and flex with:
 
