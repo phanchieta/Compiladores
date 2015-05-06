@@ -1,3 +1,4 @@
+
 %{
 
 #include "y.tab.h"
@@ -26,6 +27,7 @@ hash_table_t * tabela_palavras=NULL;
 ">="								return MAIOR_IGUAL;
 
 "<="								return MENOR_IGUAL;
+"<>"								return MENOR_MAIOR;
 
 ">"								return MAIOR;
 
@@ -48,6 +50,7 @@ hash_table_t * tabela_palavras=NULL;
 ";"								return PONTO_E_VIRGULA;
 
 "."								return PONTO;
+":"								return DOIS_PONTOS;
 
 "{"[a-zA-Z]*"}"							return COMENTARIO;
 
@@ -61,10 +64,13 @@ hash_table_t * tabela_palavras=NULL;
 
 "@"+|"!"+|"#"+|"$"+|"%"+|"&"+|"?"+|"|"+"`"+|"'"+		return CARACTERES_INVALIDOS;
 
-[a-zA-Z]+[a-zA-Z_]*						{
-	if(lookup_string(tabela_palavras, yytext)==NULL) 
-		return VAR;
-	else return PALAVRA_RESERVADA;
+[a-zA-Z]+[a-zA-Z_0-9]*						{
+	list_t * aux=lookup_string(tabela_palavras, yytext);
+		
+	if(aux==NULL)
+		return IDENT;
+
+	else	return aux->val_string;
 
 }
 [\t\n]								;
