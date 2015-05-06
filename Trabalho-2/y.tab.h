@@ -46,15 +46,91 @@ extern int yydebug;
    /* Put the tokens into the symbol table, so that GDB and other debuggers
       know about them.  */
    enum yytokentype {
-     PARENTESES_ESQUERDO = 258,
-     PARENTESES_DIREITO = 259,
-     IDENTIFICADOR = 260
+     ATRIBUICAO = 258,
+     IGUAL = 259,
+     MAIOR_IGUAL = 260,
+     MENOR_IGUAL = 261,
+     MENOR_MAIOR = 262,
+     MAIOR = 263,
+     MENOR = 264,
+     MAIS = 265,
+     MENOS = 266,
+     VEZES = 267,
+     DIVIDIDO = 268,
+     VIRGULA = 269,
+     PONTO_E_VIRGULA = 270,
+     PONTO = 271,
+     DOIS_PONTOS = 272,
+     PARENTESES_ESQUERDO = 273,
+     PARENTESES_DIREITO = 274,
+     NUM_INTEIRO = 275,
+     NUM_REAL = 276,
+     COMENTARIO = 277,
+     NUMERO_INT_MAL_FORMADO = 278,
+     NUMERO_REAL_MAL_FORMADO = 279,
+     CARACTERES_INVALIDOS = 280,
+     PROGRAM = 281,
+     START = 282,
+     END = 283,
+     CONST = 284,
+     VAR = 285,
+     REAL = 286,
+     INTEGER = 287,
+     PROCEDURE = 288,
+     ELSE = 289,
+     READ = 290,
+     WRITE = 291,
+     WHILE = 292,
+     DO = 293,
+     IF = 294,
+     THEN = 295,
+     FOR = 296,
+     TO = 297,
+     IDENT = 298
    };
 #endif
 /* Tokens.  */
-#define PARENTESES_ESQUERDO 258
-#define PARENTESES_DIREITO 259
-#define IDENTIFICADOR 260
+#define ATRIBUICAO 258
+#define IGUAL 259
+#define MAIOR_IGUAL 260
+#define MENOR_IGUAL 261
+#define MENOR_MAIOR 262
+#define MAIOR 263
+#define MENOR 264
+#define MAIS 265
+#define MENOS 266
+#define VEZES 267
+#define DIVIDIDO 268
+#define VIRGULA 269
+#define PONTO_E_VIRGULA 270
+#define PONTO 271
+#define DOIS_PONTOS 272
+#define PARENTESES_ESQUERDO 273
+#define PARENTESES_DIREITO 274
+#define NUM_INTEIRO 275
+#define NUM_REAL 276
+#define COMENTARIO 277
+#define NUMERO_INT_MAL_FORMADO 278
+#define NUMERO_REAL_MAL_FORMADO 279
+#define CARACTERES_INVALIDOS 280
+#define PROGRAM 281
+#define START 282
+#define END 283
+#define CONST 284
+#define VAR 285
+#define REAL 286
+#define INTEGER 287
+#define PROCEDURE 288
+#define ELSE 289
+#define READ 290
+#define WRITE 291
+#define WHILE 292
+#define DO 293
+#define IF 294
+#define THEN 295
+#define FOR 296
+#define TO 297
+#define IDENT 298
 
 
 
